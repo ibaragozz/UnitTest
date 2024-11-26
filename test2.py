@@ -8,4 +8,4 @@ class TestMath(unittest.TestCase):
         self.assertEqual(3 - 2, 1)
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.test2()
