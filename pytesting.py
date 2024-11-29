@@ -1,4 +1,4 @@
-import pytest
+import pytesting
 
 def test_add_2():
     assert 1 + 1 == 2
