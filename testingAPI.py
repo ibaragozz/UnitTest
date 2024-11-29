@@ -1,5 +1,5 @@
 import pytest
-from main import get_dog
+from mocingtest import get_dog
 
 
 def test_get_dog_success(mocker):
@@ -13,21 +13,19 @@ def test_get_dog_success(mocker):
 }
 
 
-   weather_data = get_weather(api_key, city)
+   dog_picture = get_dog()
 
-   assert weather_data == {
+   assert dog_picture == {
         "message": "https://images.dog.ceo/breeds/pyrenees/n02111500_1097.jpg",
         "status": "success"
 }
 
 def test_get_weather_failure(mocker):
-   mock_get = mocker.patch('main.requests.get')
+   mock_get = mocker.patch('mocingtest.requests.get')
 
    # Создаем мок-ответ для неуспешного запроса
    mock_get.return_value.status_code = 404
 
-   api_key = 'test_api_key'
-   city = 'UnknownCity'
-   weather_data = get_weather(api_key, city)
+   dog_picture = get_dog()
 
-   assert weather_data is None
+   assert dog_picture is None
